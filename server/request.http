@@ -1,0 +1,22 @@
+##
+#UC1: post a discount
+
+POST http://localhost:80/api/discount/123123
+Content-Type: application/json
+
+{
+    "discounts": [
+        {
+            "id": 1000,
+            "name": "3-Klingenrasierermen",
+            "brand": "Cien",
+            "pack": "1 Stk.",
+            "price": 2.99,
+            "eans": "463813704847,74962312123",
+            "discounted_ratio": 0.1,
+            "end_of_discount": "2022-06-26T23:59:59.999Z"
+       }
+    ]
+}
+
+###
