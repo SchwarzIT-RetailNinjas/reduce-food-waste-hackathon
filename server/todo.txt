@@ -1,0 +1,22 @@
+Main Use Case: Send events about discounted products
+Technology: Spring boot or NodeJS
+
+1. Server should be able to receive request for posting a discount
+
+e.g: [POST] /discounts
+{
+    storeID: "",
+    products: "one or more products",
+    end_of_discounts: timestampt
+}
+
+?: Where do the events come from?
+- We can make a simulation (postman automated requests)
+
+2. Server analyzes type of products for sending in specials channels
+e.g: products: [ "cheese", "table" ] => [ "food", "furniture" ]
+
+2. Server can then emit the message to a certain channels of redis
+e.g:
+- Name of channels: FrankfurtAmMainStore-all (all stands for all products   
+                    FrankfurtAmMainStore-food (only the food)
