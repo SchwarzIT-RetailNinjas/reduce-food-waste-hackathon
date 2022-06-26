@@ -1,7 +1,7 @@
 ##
 #UC1: post a discount
 
-POST http://localhost:80/api/discount/123123
+POST http://localhost:80/api/discount/14545
 Content-Type: application/json
 
 {
