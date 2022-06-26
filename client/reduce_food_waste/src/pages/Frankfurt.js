@@ -1,22 +1,28 @@
 import React from "react";
 
+import addNotification from 'react-push-notification';
+import { Notifications } from 'react-push-notification';
  
 
 function Frankfurt() {
-  return (
-    <div className="frankfurt">
-        <div className="listingstores">
-            <h2>Choose the store of your preference:</h2>
-            <div className='citystore'>
-              <h1>Lidl</h1>
-              <button className="subscribe"> 
-              Subscribe
-              </button>
-            </div>
-        </div>
+  function buttonOnClick (){
+    addNotification({
+      title: 'New Products on Discount! Hurry up!',
+      native:true         
+    })
+  };
+return (
+<div className="frankfurt">
+    <Notifications/>
+    <div className='citystore'>
+      <div className='lidlimage'></div>
+      <button onClick={buttonOnClick} className="subscribe"> 
+      Subscribe
+      </button>
     </div>
+</div>
 
-  )
+)
 }
 
 export default Frankfurt
