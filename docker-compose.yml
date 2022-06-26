@@ -21,6 +21,18 @@ services:
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+  socket:
+    depends_on:
+      - redis
+    build:
+      context: ./socket
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - ./socket:/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
   # client:
   #   stdin_open: true
   #   build:

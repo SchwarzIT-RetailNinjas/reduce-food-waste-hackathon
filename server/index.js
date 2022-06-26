@@ -1,4 +1,5 @@
 const express = require('express');
+const { createClient } = require('redis');
 
 const PORT = 5000;
 const app = express();
@@ -6,18 +7,33 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const keys = require("./keys");
 // Redis Client Setup
-const redis = require("redis");
-const redisPublisher = redis.createClient({
-    host: keys.redisHost,
-    port: keys.redisPort,
-    retry_strategy: () => 1000,
-}).duplicate();
+const keys = require("./keys");
+
+const redisPublisher = createClient({
+    url: 'redis://redis:6379'
+});
 
 (async () => {
+    redisPublisher.on('connection', ( connection ) => {
+        console.log("Publisher connected");
+    })
+    redisPublisher.on('error', (err) => console.log('Redis Client Error', err));
+
     await redisPublisher.connect();
  })();
+
+
+// //Client
+// const redisSubscriber = redisPublisher.duplicate();
+
+// (async () => {
+//     await redisSubscriber.connect();
+
+//     await redisSubscriber.pSubscribe('*', (message, channel) => {
+//         console.log(message, channel); // 'message', 'channel'
+//       });
+//  })();
 
 //[POST] /discount/:store
 /**
@@ -45,7 +61,7 @@ app.post('/discount/:store', (req, res) => {
 
     for (const discount of discounts) {
         const channelID = storeid + "-all";
-        redisPublisher.publish(channelID, JSON.stringify({ discount }))
+        redisPublisher.publish(channelID, JSON.stringify({ discount }));
     }
 
     res.sendStatus(200);
