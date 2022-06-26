@@ -1,20 +1,27 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React from 'react';
 import Location from './components/Location';
-import Stores from './components/Stores';
+import Frankfurt from './pages/Frankfurt';
+import Berlin from './pages/Berlin';
+import Koln from './pages/Koln';
+import Muchen from './pages/Muchen';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 
 function App() {
   return (
-<>
-<Router>
-  <Location/>
+    
+      <Router>
         <Switch>
-        <Route path='/stores' component={Stores} />
+        <Route path='/' exact component={Location} />
+          <Route path='/frankfurt'  component={Frankfurt} />
+          <Route path='/berlin'  component={Berlin} />
+          <Route path='/koln'  component={Koln} />
+          <Route path='/muchen'  component={Muchen} />
         </Switch>
       </Router>
-</>
+    
   );
 }
 

@@ -1,11 +1,9 @@
-
-
 export const stores=[
 
             {
                 id: "14545",
                 cName:"listedstores",
-                path:'/stores',
+                path:'/frankfurt',
                     countryCode: "DE",
                     zipCode: 60528,
                     city: "Frankfurt am Main",
@@ -15,7 +13,7 @@ export const stores=[
             {
                 id: "32346",
                cName:"listedstores",
-                path:"/stores",
+                path:"/muchen",
                 
                     "countryCode": "DE",
                     "zipCode": 80335,
@@ -26,7 +24,7 @@ export const stores=[
             {
                 "id": "54766",
                 "cName":"listedstores",
-                "path":"/stores",
+                "path":"/berlin",
               
                     "countryCode": "DE",
                     "zipCode": 10435,
@@ -37,7 +35,7 @@ export const stores=[
             {
                 "id": "87348",
                 "cName":"listedstores",
-                "path":"/stores",
+                "path":"/koln",
               
                     "countryCode": "DE",
                     "zipCode": 50674,
