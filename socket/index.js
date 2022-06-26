@@ -10,6 +10,7 @@ io.on("connection", (socket) => {
     console.log("A new client is connected");
 
     socket.on("subscribe", (channelId) => {
+        console.log("A client is subscribe to a channel")
         socket.to(channelId);
     });
 
@@ -28,7 +29,8 @@ const redisSubscriber = createClient({
     await redisSubscriber.connect();
 
     await redisSubscriber.pSubscribe('*', (message, channelId) => {
-        io.to(channelId).emit(message);
+        console.log(message, channelId);
+        io.to(channelId).emit("discount", message);
     });
  })();
 

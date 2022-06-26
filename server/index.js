@@ -23,18 +23,6 @@ const redisPublisher = createClient({
     await redisPublisher.connect();
  })();
 
-
-// //Client
-// const redisSubscriber = redisPublisher.duplicate();
-
-// (async () => {
-//     await redisSubscriber.connect();
-
-//     await redisSubscriber.pSubscribe('*', (message, channel) => {
-//         console.log(message, channel); // 'message', 'channel'
-//       });
-//  })();
-
 //[POST] /discount/:store
 /**
  * @params storeid
