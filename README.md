@@ -12,4 +12,9 @@ Redis (implemented through docker)
 Frontend React app integrated with Push notifications
 
 frontend app screens: 
-presentation demo:
+#### Choosing a lidl store
+![choose screen](https://github.com/SchwarzIT-RetailNinjas/reduce-food-waste-hackathon/blob/main/docs/1.png?raw=true)
+#### Choosing a lidl store
+![choose screen](https://github.com/SchwarzIT-RetailNinjas/reduce-food-waste-hackathon/blob/main/docs/2.png?raw=true)
+
+presentation demo: https://github.com/SchwarzIT-RetailNinjas/reduce-food-waste-hackathon/blob/main/docs/RetailNinjas_SchwartzIT%20(1).pptx?raw=true
