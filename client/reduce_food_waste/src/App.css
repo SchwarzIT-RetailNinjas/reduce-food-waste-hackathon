@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* Global Edits */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  text-decoration: none;
+}
+
+.berlin, .frankfurt, .koln, .muchen {
+    height: 100vh;
+    width: 100%;
+    background-color: blue;
+    display: flex;
+}
+
+.citystore{
+    height: 80vh;
+    width: 34%;
+    justify-content: center;
+    text-align: center;
+    margin:5%;
+    margin-left: 33.5%;
+}
+
+.lidlimage{
+    background-image: url("../src/images/R.png");
+    height: 69vh;
+    background-position: center;
+    background-size: 69vh;
+
+    
+}
